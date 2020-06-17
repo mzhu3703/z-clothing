@@ -1,0 +1,11 @@
+.signInForm {
+  
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+
+    .button{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
