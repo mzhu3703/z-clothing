@@ -1,5 +1,5 @@
 import React from 'react';
-import '/home/michael/crwn-clothing/src/Components/FormInput/FormInputStyles.scss'
+import '/home/michael/z-clothing/src/Components/FormInput/FormInputStyles.scss'
 
 const FormInput = ({ handleChange, label, ...otherProps }) => {
     return (

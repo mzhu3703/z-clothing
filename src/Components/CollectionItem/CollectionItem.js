@@ -1,5 +1,5 @@
 import React from 'react'
-import '/home/michael/crwn-clothing/src/Components/CollectionItem/CollectionItemStyles.scss'
+import '/home/michael/z-clothing/src/Components/CollectionItem/CollectionItemStyles.scss'
 
 //Parent is CollectionList, data of each clothing item 
 function CollectionItem(props) {

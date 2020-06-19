@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormInput from '../FormInput/FormInput'
 import CustomButton from '../CustomButton/CustomButton'
 import { auth, signInWithGoogle } from '../../firebase/firebaseUtil'
-import '/home/michael/crwn-clothing/src/Components/SignInForm/SignInForm.scss'
+import '/home/michael/z-clothing/src/Components/SignInForm/SignInForm.scss'
 class SignInForm extends Component {
 
     constructor(props) {
