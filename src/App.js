@@ -11,13 +11,6 @@ import {setCurrentUser} from './redux/user/user.actions'
 import { auth, createUserProfileDocument } from './firebase/firebaseUtil'
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      currentUser : null,
-    }
-  }
- 
   unsubscribeFromAuth = null;
 
   //store userData in database onto state 
@@ -32,17 +25,13 @@ class App extends Component {
         //whenever the database is updated with a user change the state 
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
-            currentUser: {
               id: snapShot.id,
               ...snapShot.data()
-            }
           })
         })
       }
       //otherwise set the currentUser to the currentUser that was changed 
       setCurrentUser(userAuth);
-
-
     })
 
   }
@@ -52,15 +41,15 @@ class App extends Component {
     this.unsubscribeFromAuth();
   }
 
-  render() {
-    
+  render() { 
     return (
       <div>
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <Homepage />} />
           <Route exact path='/shop' render={() => <ShopPage />} />
-          <Route exact path='/Sign' render={() => <SignPage /> }/>
+          {/* if user i */}
+          <Route exact path='/Sign' render={() => this.props.currentUser ? (<Redirect to = '/'/>): (<SignPage/>) }/>
         </Switch>
       </div>
     );
