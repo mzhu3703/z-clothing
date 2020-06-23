@@ -6,6 +6,8 @@ import '/home/michael/z-clothing/src/Components/Header/HeaderStyles.scss'
 import { connect } from 'react-redux'
 import CartIcon from '../Cart/CartIcon/CartIcon'
 import CartDropdown from '../Cart/CartDropdown/CartDropdown'
+import {selectHidden} from '../../redux/cart/cart.selectors'
+import {currentUserSelector} from '../../redux/user/user.selectors'
 
 // Parent is App. Contains all the links
 function Header(props) {
@@ -34,13 +36,14 @@ function Header(props) {
     )
 }
 
-// destructures user off of state and currentUser is destructured off of user 
-function mapStateToProps({user: {currentUser}, cart: {hidden}}){
-    return {
-        currentUser,
-        hidden
+function mapStateToProps(state){
+    return{
+        currentUser: currentUserSelector(state),
+        hidden: selectHidden(state)
     }
 }
+
+
 
   
   export default connect(mapStateToProps)(Header);

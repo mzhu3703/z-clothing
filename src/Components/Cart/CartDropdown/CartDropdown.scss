@@ -10,16 +10,23 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 
+    .empty-cart{
+      font-size: 24px;
+      height: 280px;
+      display: inline-block;
+    
+    }
 
   .cart-items {
-    height: 240px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     overflow : auto;
-
-
   }
+
+ 
     .button{
         margin-top: auto;
     }

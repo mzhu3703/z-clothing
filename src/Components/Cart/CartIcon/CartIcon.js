@@ -3,6 +3,7 @@ import { ReactComponent as CartLogo } from '../../../assets/shopping-icon.svg'
 import './CartIcon.scss'
 import { connect } from 'react-redux'
 import { toggleCart } from '../../../redux/cart/cart.actions'
+import {selectCartItemsCount, selectCartItems} from '../../../redux/cart/cart.selectors'
 function CartIcon(props) {
 
     const handleClick = event => {
@@ -18,18 +19,9 @@ function CartIcon(props) {
 }
 
 
-const mapStateToProps = ({ cart: { cartItems } }) => {
-    if (cartItems.length == 0) {
-        return {
-            quantity: 0
-        }
-    }
-    else {
-        // 0 is inital value, accumulate all the quantity values of the cartItems to acc
-        let totalItems = cartItems.reduce(function (acc, obj) { return acc + obj.quantity; }, 0);
-        return {
-            quantity: totalItems
-        }
+const mapStateToProps = (state) => {
+    return{
+        quantity: selectCartItemsCount(state)
     }
 
 }

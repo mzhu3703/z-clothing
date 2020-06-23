@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 // user action used for dispatchToProps
 import {setCurrentUser} from './redux/user/user.actions'
 import { auth, createUserProfileDocument } from './firebase/firebaseUtil'
-
+import {currentUserSelector} from './redux/user/user.selectors'
+import CheckoutPage from './Pages/CheckoutPage/CheckoutPage'
 class App extends Component {
   unsubscribeFromAuth = null;
 
@@ -48,8 +49,9 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Homepage />} />
           <Route exact path='/shop' render={() => <ShopPage />} />
-          {/* if user i */}
+          {/* if user exists prevent access to sign page, redirect to homepage */}
           <Route exact path='/Sign' render={() => this.props.currentUser ? (<Redirect to = '/'/>): (<SignPage/>) }/>
+          <Route exact path= '/checkout' render = {() => <CheckoutPage/>}/>
         </Switch>
       </div>
     );
@@ -57,8 +59,8 @@ class App extends Component {
 }
 
 
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
+const mapStateToProps = (state) => ({
+  currentUser: currentUserSelector(state)
 })
 
 
