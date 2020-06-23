@@ -14,8 +14,7 @@ function CollectionList(props) {
             {/* Items of each clothing displayed on Shop page */}
             <div className='items'>
                 {/* filters out the elements with index of more than 4 */}
-                {items.filter((item, idx) => idx < 4)
-                .map(({id , ...otherItemProps}) => <CollectionItem key = {id} {...otherItemProps}/>)}
+                {items.filter((item, idx) => idx < 4).map((item) => <CollectionItem key = {item.id} item = {item}/>)}
             </div>
 
         </div>

@@ -28,7 +28,7 @@ function Header(props) {
                 }
                 <CartIcon/>
             </div>
-            {hidden ? <CartDropdown/> : null }
+            {hidden ? null  : <CartDropdown/>}
             
         </div>
     )
