@@ -1,9 +1,8 @@
 import React from 'react'
-import '/home/michael/z-clothing/src/Components/CollectionItem/CollectionItemStyles.scss'
-import CustomButton from '../CustomButton/CustomButton'
+import './CollectionItemStyles.scss'
+import CustomButton from '../../CustomButton/CustomButton'
 import {connect} from 'react-redux'
-import {addItem} from '../../redux/cart/cart.actions'
-import {toggleCart} from '../../redux/cart/cart.actions'
+import {addItem} from '../../../redux/cart/cart.actions'
 
 //Parent is CollectionList, data of each clothing item 
 function CollectionItem(props) {

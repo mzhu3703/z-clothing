@@ -11,6 +11,8 @@ import {setCurrentUser} from './redux/user/user.actions'
 import { auth, createUserProfileDocument } from './firebase/firebaseUtil'
 import {currentUserSelector} from './redux/user/user.selectors'
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage'
+
+
 class App extends Component {
   unsubscribeFromAuth = null;
 
@@ -48,10 +50,11 @@ class App extends Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <Homepage />} />
-          <Route exact path='/shop' render={() => <ShopPage />} />
+          <Route path='/shop' render={(props) => <ShopPage {...props}/>} />
           {/* if user exists prevent access to sign page, redirect to homepage */}
           <Route exact path='/Sign' render={() => this.props.currentUser ? (<Redirect to = '/'/>): (<SignPage/>) }/>
           <Route exact path= '/checkout' render = {() => <CheckoutPage/>}/>
+        
         </Switch>
       </div>
     );
@@ -60,7 +63,8 @@ class App extends Component {
 
 
 const mapStateToProps = (state) => ({
-  currentUser: currentUserSelector(state)
+  currentUser: currentUserSelector(state),
+  
 })
 
 

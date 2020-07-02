@@ -3,7 +3,7 @@ import { ReactComponent as CartLogo } from '../../../assets/shopping-icon.svg'
 import './CartIcon.scss'
 import { connect } from 'react-redux'
 import { toggleCart } from '../../../redux/cart/cart.actions'
-import {selectCartItemsCount, selectCartItems} from '../../../redux/cart/cart.selectors'
+import {selectCartItemsCount} from '../../../redux/cart/cart.selectors'
 function CartIcon(props) {
 
     const handleClick = event => {
