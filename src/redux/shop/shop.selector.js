@@ -8,8 +8,9 @@ export const selectCollection = createSelector(
     [selectShop], shopData => shopData.SHOP_DATA
 )
 
-export const selectCollectionsForPreview = createSelector(
-    
+
+export const selectCollectionsForPreview = createSelector(    
+    // converts the shopdata that was an object to an array of objects to be able to map through 
     [selectCollection],SHOP_DATA => Object.keys(SHOP_DATA).map(key => SHOP_DATA[key])
 )
 
