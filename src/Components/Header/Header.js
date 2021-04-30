@@ -15,7 +15,7 @@ function Header(props) {
     return (
         <div className='header'>
             <div className='logoContainer'>
-                <Link to='/'>
+                <Link to='/z-clothing'>
                     <Logo className='logo' />
                 </Link>
             </div>
