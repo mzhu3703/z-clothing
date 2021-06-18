@@ -39,7 +39,7 @@ class App extends Component {
 
   }
 
-  //whenever component is closed, also close authorization to prevent memory leak 
+  //whenever component is closed, also close authorization to prevent memory leak ,
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
