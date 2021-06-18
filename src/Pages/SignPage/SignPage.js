@@ -1,7 +1,7 @@
 import React from 'react'
 import SignInForm from '../../Components/SignInForm/SignInForm'
 import SignUpForm from '../../Components/SignUpForm/SignUpForm'
-import '/home/michael/z-clothing/src/Pages/SignPage/SignPageStyles.scss'
+import './SignPageStyles.scss'
 
 function SignPage() {
     return (
