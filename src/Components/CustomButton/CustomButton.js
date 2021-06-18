@@ -1,5 +1,5 @@
 import React from 'react';
-import '/home/michael/z-clothing/src/Components/CustomButton/CustomButtonStyles.scss';
+import './CustomButtonStyles.scss';
 
 //accepts props and conditionally applies the styles based on what component it is in
 const CustomButton = ({ children, inverted, isGoogleSignIn, ...otherProps }) => (
