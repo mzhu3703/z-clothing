@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CustomButton from '../CustomButton/CustomButton'
 import FormInput from '../FormInput/FormInput'
 import {auth, createUserProfileDocument} from '../../firebase/firebaseUtil'
-import '/home/michael/z-clothing/src/Components/SignUpForm/SignUpForm.scss'
+import './SignUpForm.scss'
 class SignUpForm extends Component {
     constructor(props) {
         super(props)
